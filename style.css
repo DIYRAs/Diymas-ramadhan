@@ -1,0 +1,956 @@
+* {
+    padding: 0;
+    margin: 0;
+    scrollbar-width: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.container {
+    width: 100vw;
+    background-color: rgb(105, 105, 105);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+
+    .bigBG {
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        background-image: url(Sakura\ Flower.jpg);
+        background-position: right;
+        background-size: cover;
+        filter: blur(10px);
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+
+main {
+    background-color: white;
+    box-sizing: border-box;
+    padding: 1rem 0;
+}
+
+.cover {
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        filter: brightness(70%) saturate(120%);
+        height: 100%;
+        width: 100%;
+        background-position: center;
+    }
+
+    .bunga-cover {
+        position: absolute;
+        filter: drop-shadow(0 0 50px black);
+        object-fit: cover;
+        object-position: center;
+        z-index: -1;
+        color: black;
+        transition: all .3s ease-in-out;
+    }
+
+    .bunga-cover2 {
+        position: absolute;
+        filter: drop-shadow(0 0 70px black);
+        right: -1%;
+        top: 0;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .bunga-cover3 {
+        position: absolute;
+        filter: drop-shadow(0 0 70px black);
+        right: -10%;
+        top: 10%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .cover-upper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        color: rgb(0, 0, 0);
+
+        & p {
+            font-size: larger;
+        }
+
+        & h1 {
+            font-size: 2.2rem;
+        }
+    }
+
+    .cover-lower {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        & p {
+            font-size: large;
+        }
+
+        & p:nth-child(2) {
+            margin-bottom: -10px;
+        }
+
+        & button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            font-size: medium;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            gap: 10px;
+            width: 12rem;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                transform: translateY(5px);
+                border-radius: 30px 0 30px 0;
+            }
+        }
+
+        & button div {
+            height: 2rem;
+            width: 2rem;
+            background-image: url(mainWhite.png);
+            background-position: center;
+            background-size: cover;
+        }
+    }
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 140vh;
+    gap: 1rem;
+    width: 50vw;
+
+    section {
+        width: 100%;
+        height: 100%;
+    }
+
+    .intro-upper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        height: 50%;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        color: white;
+
+        & .intro-bg {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: red;
+            background-color: rgba(black, black, black, .5);
+            background-image: url(bg.jpg);
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            filter: brightness(60%) contrast(130%) saturate(120%);
+        }
+
+        & hr {
+            width: 50%;
+        }
+
+        & p {
+            font-size: large;
+        }
+
+        & h2 {
+            font-size: xx-large;
+        }
+    }
+
+    .intro-middle {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: .7rem;
+        height: 25%;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        background-color: white;
+
+        & i {
+            font-size: large;
+        }
+    }
+
+    .intro-lower {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 40%;
+        gap: 5px;
+
+        .intro-photo {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: rgb(255, 255, 255);
+            overflow: hidden;
+
+            .marquees {
+                display: flex;
+                animation: marquee 30s linear infinite;
+                gap: 5px;
+
+                img {
+                    height: 100%;
+                    width: 250px;
+                    object-fit: cover;
+                    object-position: center;
+                    transition: all .2s ease-in-out;
+
+                    &:hover {
+                        width: 300px;
+                    }
+                }
+            }
+
+            .marquees-right {
+                animation: marquee 30s linear reverse infinite;
+            }
+        }
+    }
+}
+
+.mempelai {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5rem 0 1.5rem;
+    overflow: hidden;
+
+    .thumbnail {
+        height: 600px;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .title {
+        font-size: x-large;
+        margin-top: 4rem;
+        opacity: .6;
+    }
+
+    .sres::before,
+    .sres::after {
+        content: "----------------------------------------------";
+    }
+
+    .info-mempelai {
+        height: 40%;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .bordermem {
+            position: absolute;
+            left: 4%;
+            height: 80%;
+            top: 10%;
+            transform: rotate(-45deg);
+            animation: goyangBorder 5s ease-in-out infinite;
+            transform-origin: 50% 50%;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .bordermem2 {
+            position: absolute;
+            right: 4%;
+            height: 80%;
+            top: 10%;
+            transform: rotate(45deg) scaleX(-1);
+            animation: goyangBorder2 5s ease-in-out infinite;
+            transform-origin: 50% 50%;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        img {
+            height: 350px;
+            width: 350px;
+            object-fit: cover;
+            object-position: center;
+            margin-top: 1rem;
+        }
+
+        i {
+            font-size: xx-large;
+            opacity: .7;
+        }
+
+        hr {
+            height: 3px;
+            background-color: black;
+            width: 100%;
+            margin: .7rem 0;
+        }
+
+        p {
+            font-size: medium;
+            text-align: center;
+            font-size: large;
+            opacity: .7;
+        }
+    }
+}
+
+.event {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    position: relative;
+    overflow: hidden;
+
+    .blur {
+        width: 150%;
+        position: absolute;
+        height: 50px;
+        background-color: rgb(255, 255, 255);
+        top: 28%;
+        z-index: 2;
+        box-shadow: 0 0 70px 50px white, 0 0 70px 50px white;
+    }
+
+    .event-upper {
+        height: 450px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-image: url(bg.jpg);
+        background-position: center;
+        z-index: 2;
+        position: relative;
+        color: white;
+
+        &::before {
+            content: " ";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+            opacity: .5;
+            z-index: -1;
+
+        }
+
+        h1 {
+            font-weight: lighter;
+            margin-bottom: 1rem;
+        }
+
+        hr {
+            height: 3px;
+            width: 90%;
+            margin-top: 1.5rem;
+            margin-bottom: .5rem;
+            background-color: rgb(196, 196, 196);
+            border: none;
+            box-shadow: 0 0 20px white;
+        }
+
+        .countdown {
+            margin-bottom: 1rem;
+            margin-top: .5rem;
+            display: flex;
+            gap: 1rem;
+            text-align: center;
+
+            span {
+                font-size: x-large;
+                font-weight: bold;
+            }
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            font-size: medium;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            gap: 10px;
+            width: 13rem;
+        }
+
+        button div {
+            height: 2rem;
+            width: 2rem;
+            background-image: url(today.png);
+            background-position: center;
+            background-size: cover;
+        }
+    }
+
+    .event-middle,
+    .event-lower {
+        box-shadow: 0 0 10px black;
+        border: 1px solid black;
+        width: 90%;
+        height: 600px;
+        background-color: white;
+        border-radius: 100px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 3;
+
+        .event-bg {
+            background-image: url("Pre\ Wedding\ Photo\ Ideas\ black.jpg");
+            transform: scaleX(-1);
+            height: 60%;
+            width: 100%;
+            filter: grayscale(100%);
+            border-radius: 0 100px 0 0;
+            background-position: 5px -400px;
+        }
+
+        .info {
+            height: 40%;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+
+            p {
+                font-size: large;
+                text-align: center;
+            }
+        }
+
+        .side {
+            position: absolute;
+            width: 20%;
+            height: 40%;
+            background-color: black;
+            right: 0;
+            bottom: 0;
+            display: grid;
+            place-items: center;
+
+            h2 {
+                transform: rotateZ(90deg);
+                color: white;
+            }
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            font-size: medium;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 10px;
+            gap: 10px;
+            width: 12rem;
+            border: none;
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                transform: translateY(-10px);
+                border-radius: 10px;
+            }
+        }
+
+        button div {
+            height: 2rem;
+            width: 2rem;
+            background-image: url(google-maps.png);
+            background-position: center;
+            background-size: cover;
+        }
+    }
+
+    .event-lower {
+        border-radius: 0 0 100px 0;
+
+        .event-bg {
+            border-radius: 0;
+            transform: scaleX(1);
+            width: 100.2%;
+        }
+
+        .side {
+            left: 0;
+
+            h2 {
+                transform: rotateZ(-90deg);
+            }
+        }
+
+        .info {
+            align-self: flex-end;
+            border-radius: 0 0 100px 0;
+            height: 40%;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+
+            p {
+                font-size: large;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.galeri {
+    height: 280vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    .blur {
+        width: 100%;
+        position: absolute;
+        height: 50px;
+        background-color: rgb(255, 255, 255);
+        top: 14.5%;
+        z-index: 1;
+        box-shadow: 0 0 60px 30px rgb(255, 255, 255), 0 0 60px 30px rgb(255, 255, 255), 0 0 60px 30px rgb(255, 255, 255);
+    }
+
+    .galeri-upper {
+        height: 500px;
+        width: 100%;
+        background-image: url(bg.jpg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-position: top;
+        background-repeat: no-repeat;
+        filter: brightness(100%) contrast(130%) saturate(160%);
+        background-size: cover;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            opacity: 1;
+            z-index: -1;
+        }
+
+        h2 {
+            font-size: xx-large;
+        }
+
+        hr {
+            width: 90%;
+            background-color: black;
+            height: 2px;
+            border: none;
+        }
+    }
+
+    .galeri-lower {
+        z-index: 2;
+        display: grid;
+        width: 100%;
+        height: 100%;
+        gap: 3px;
+        box-sizing: border-box;
+        padding: 2rem;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 20% repeat(4, 20%);
+        position: relative;
+        grid-template-areas:
+            "video video video"
+            "foto1 foto2 foto3"
+            "foto4 foto5 foto6"
+            "foto7 foto8 foto9"
+            "foto10 foto10 foto10";
+    }
+
+
+    .duar {
+        background-color: rgb(255, 255, 255);
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: all .2s ease-in-out;
+        }
+    }
+
+    .video {
+        grid-area: video;
+        box-shadow: 0 10px 50px 5px white, inset 0 0 70px 1px white;
+        border: 1px solid black;
+
+        video {
+            border: none;
+            object-fit: cover;
+            object-position: center;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .foto1 {
+        grid-area: foto1;
+    }
+
+    .foto2 {
+        grid-area: foto2;
+    }
+
+    .foto3 {
+        grid-area: foto3;
+    }
+
+    .foto4 {
+        grid-area: foto4;
+    }
+
+    .foto5 {
+        grid-area: foto5;
+    }
+
+    /* .foto5 {
+        height: 30%;
+        width: 40%;
+        top: 53%;
+        left: 30%;
+        background-color: green;
+        position: absolute;
+
+    } */
+
+    .foto6 {
+        grid-area: foto6;
+    }
+
+    .foto7 {
+        grid-area: foto7;
+    }
+
+    .foto8 {
+        grid-area: foto8;
+    }
+
+    .foto9 {
+        grid-area: foto9;
+    }
+
+    .foto10 {
+        height: 320px;
+        grid-area: foto10;
+        position: relative;
+
+        img {
+            object-fit: cover;
+            object-position: center;
+            transition: all 0.5s ease-in-out;
+        }
+
+        img.fade {
+            transform: translateX(100%);
+        }
+
+        button {
+            position: absolute;
+            top: 10%;
+            height: 80%;
+            width: 34px;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        button:nth-child(2) {
+            right: 0;
+        }
+    }
+
+}
+
+.rsvp {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    gap: 10px;
+    box-sizing: border-box;
+    padding-top: 10%;
+
+    .bunga {
+        position: absolute;
+        width: 200px;
+        top: -1%;
+        z-index: -1;
+        transform: rotateZ(130deg) translateY(40%);
+    }
+
+    .bunga1 {
+        left: 6%;
+    }
+
+    .bunga2 {
+        right: 6%;
+        transform: rotateZ(230deg) translateY(40%);
+    }
+
+    .bunga3 {
+        width: 200px;
+        z-index: -1;
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        transform: rotateZ(45deg) translateY(40%);
+    }
+
+    .bunga4 {
+        width: 200px;
+        z-index: -1;
+        position: absolute;
+        bottom: .5%;
+        right: 5%;
+        transform: rotateZ(-45deg) translateY(40%);
+    }
+
+    h2 {
+        font-weight: lighter;
+    }
+
+    p {
+        opacity: .7;
+    }
+
+    hr {
+        background-color: black;
+        width: 90%;
+        border: none;
+        height: 1px;
+        margin: 5px 0;
+    }
+
+    .field {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .pesan-field {
+
+        textarea {
+            width: 100%;
+            height: 7rem;
+            resize: none;
+            box-sizing: border-box;
+            padding: 10px;
+            outline: none;
+        }
+    }
+
+    form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 2rem;
+        gap: 5px;
+        margin-bottom: 1rem;
+
+        label {
+            align-self: flex-start;
+        }
+
+        input,
+        select {
+            width: 100%;
+            height: 3rem;
+            box-sizing: border-box;
+            padding: 10px;
+            outline: none;
+        }
+
+        select {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: black;
+            color: white;
+            font-size: large;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+            height: 3rem;
+            margin: 0;
+        }
+    }
+
+    button {
+        background-color: black;
+        color: white;
+        font-size: large;
+        border: none;
+        cursor: pointer;
+        width: 30%;
+        margin-top: 1rem;
+        height: 3rem;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            border-radius: 50px;
+            transform: translateY(-5px);
+        }
+    }
+}
+
+.penutup {
+    background-image: url(bazmineh_com.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    color: white;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        opacity: .6;
+        z-index: -1;
+    }
+
+    div {
+        height: 50px;
+        width: 120%;
+        position: absolute;
+        top: -11%;
+        left: 0;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 0 70px 20px rgb(255, 255, 255);
+    }
+
+    div:nth-child(2) {
+        background-color: rgb(255, 255, 255);
+        top: 100%;
+    }
+
+    h1 {
+        font-weight: lighter;
+    }
+
+    hr {
+        background-color: rgb(255, 255, 255);
+        width: 90%;
+        height: 2px;
+        margin: 1rem 0;
+    }
+}
+
+.rsvp-penutup {
+    position: relative;
+    overflow: hidden;
+}
+
+.blurRP {
+    width: 100%;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 30px 30px rgb(255, 255, 255);
+    position: absolute;
+    bottom: 31%;
+    z-index: 2;
+}

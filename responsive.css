@@ -1,0 +1,119 @@
+@media screen and (max-width: 700px) {
+    .cover {
+        width: 100vw;
+
+        .bunga-cover {
+            scale: .8;
+        }
+
+        .bunga-cover2 {
+            scale: .8;
+        }
+
+        .bunga-cover3 {
+            scale: .8;
+        }
+    }
+
+    .intro {
+        width: 100vw;
+    }
+
+    .mempelai {
+        width: 100vw;
+
+
+        .sres::before,
+        .sres::after {
+            content: "-----------------------------------";
+        }
+
+        .info-mempelai {
+            .bordermem {
+                left: -10%;
+            }
+
+            .bordermem2 {
+                right: -10%;
+            }
+        }
+    }
+
+    .event {
+        width: 100vw;
+
+        .event-middle,
+        .event-lower {
+            width: 80%;
+            height: 550px;
+
+            .event-bg {
+                background-position: bottom;
+                background-size: cover;
+            }
+
+            .info {
+
+                p {
+                    font-size: medium;
+                }
+            }
+
+            .side {
+                h2 {
+                    font-weight: lighter;
+                }
+            }
+
+            button {
+                width: 10rem;
+                height: 3rem;
+                font-size: small;
+            }
+        }
+    }
+
+    .galeri {
+        width: 100vw;
+
+        .blur {
+            top: 15%;
+        }
+
+        .galeri-lower {
+            height: 85%;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 20% repeat(5, 14.9%);
+
+            grid-template-areas:
+                "video video"
+                "foto1 foto2"
+                "foto3 foto4"
+                "foto5 foto6"
+                "foto7 foto8"
+                "foto9 foto9";
+
+        }
+
+        .foto9 {
+            object-position: bottom;
+        }
+    }
+
+    .rsvp {
+        width: 100vw;
+    }
+
+    .penutup {
+        width: 100vw;
+    }
+
+    .big-bunga {
+        scale: 1;
+    }
+
+    .big-bunga2 {
+        scale: -1;
+        transform-origin: 60% 50%;
+    }
+}
